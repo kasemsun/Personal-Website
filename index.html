@@ -20,9 +20,10 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <!-- email-->
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script>
-            const apiKey = '<%= apiKey %>'; // This value will be inserted by the server
-            console.log('API Key:', apiKey);
+        <script type="text/javascript">
+            (function() {
+            emailjs.init("Wua_Kc2GEAW6R7n8a");
+            })();
         </script>
     </head>
     <body id="top">
