@@ -6,7 +6,7 @@
 //
 // Scripts
 // 
-
+$('#user-form').on('submit', Submitform);
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -53,28 +53,43 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-$("#submitButton").click((e) => Submit(e));
+    function sendEmail() {
 
-function Submit(e){
- console.log("submit");
- sendEmail();
- e.preventDefault();
-}
+        // Define the email parameters
+        let messages = `from: ${$('#name').val()} \n tel:${$('#phone').val()} \n ${$('#message').val()}`;
+        const emailParams = {
+            from_name: $('#email').val(),
+            message: messages,
+        };
+        console.log(emailParams);
+    
+        // Send the email
+        emailjs.send('service_369n4ub', 'template_4norfeq', emailParams)
+        .then(function(response) {
+        handleSuccess(response);
+        }, function(error) {
+        handleFailure(error);
+        });
 
-function sendEmail() {
+        $('#submitButton').prop('disabled', true);
+    }
 
-// Define the email parameters
-const emailParams = {
-  from_name: $('#email').val(),
-  message: $('#message').val(),
-};
+    // Function to handle success
+    function handleSuccess(response){
+        $('#submitSuccessMessage').removeClass('d-none');
+        $('#submitErrorMessage').addClass('d-none');
+        console.log('Email sent:', response);
+    }
 
-// Send the email
-emailjs.send('service_369n4ub', 'template_4norfeq', emailParams)
-  .then(function(response) {
-    console.log('Email sent:', response);
-  }, function(error) {
-    console.error('Email error:', error);
-  });
-  
-}
+    // Function to handle failure
+    function handleFailure(error) {
+        $('#submitSuccessMessage').addClass('d-none');
+        $('#submitErrorMessage').removeClass('d-none');
+        console.error('Email error:', error);
+    }
+
+    function Submitform(e){
+        console.log("submit",e);
+        sendEmail();
+        e.preventDefault();
+    }
