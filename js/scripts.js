@@ -68,6 +68,9 @@ window.addEventListener('DOMContentLoaded', event => {
         .then(response => {
             handleSuccess(response);
             console.log(response);
+            $('#fire-work').addClass('pyro');
+            const snd = new Audio("/assets/celebrate.mp3");
+            snd.play();
         })
         .catch(error => {
             handleFailure(error);
