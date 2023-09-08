@@ -117,18 +117,18 @@
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">I wanted to take a moment to introduce myself, Kasensun Suthakun. I've been working as a programmer analyst at Code-D 789 Co for about a year now. During my time there, I've become pretty skilled in a bunch of different technologies like React, ASP.NET Core, Entity Framework Core, WPF, Caliburn.Micro, and Java Spring Boot. I'm proud to say that I'm a quick learner and always up for a challenge.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">But it's not just about the technical stuff for me. I really value teamwork and collaboration. I believe that when we work together, we can accomplish amazing things and overcome any obstacles that come our way. I'm always on the lookout for opportunities to expand my professional network and explore new collaborations and growth prospects.</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead">I'm Kasensun, and I'm thrilled to introduce myself on my personal website. My career as a programmer analyst at Code-D 789 Co has allowed me to thrive in the dynamic world of web development. Throughout this year, I've acquired expertise in an array of technologies, including React, ASP.NET Core, Entity Framework Core, WPF, Caliburn.Micro, and Java Spring Boot.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead">Web development is my true passion. It's not just about writing code; it's about creating immersive online experiences that leave a lasting impact. I'm a quick learner and an enthusiastic problem solver, always ready to embrace new challenges. Collaboration is key to my philosophy—I believe that teamwork can conquer any obstacle</p></div>
                 </div>
                 <!-- About Section Button-->
                 <div class="text-center mt-4">
                     <a class="btn btn-xl btn-outline-light"
                     id="downloadLink"
-                    href="./assets/kasemsun-cv.pdf"
+                    href="./assets/Kasemsun-Resume.pdf"
                     target="_blank" 
-                    type="application/octet-stream" download="kasemsun-cv.pdf">
+                    type="application/octet-stream" download="Kasemsun-Resume.pdf">
                         <i class="fas fa-download me-2"></i>
-                        Download My CV
+                        Download My Resume
                     </a>
                 </div>
             </div>
@@ -147,26 +147,19 @@
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-
-                        <form id="user-form">
+                        <form id="user-form" method="POST">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                                <input class="form-control" name="email" id="email" type="email" placeholder="name@example.com" required />
                                 <label for="email">Email address</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" maxlength="10" required/>
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
@@ -174,6 +167,14 @@
                                 <label for="message">Message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                             </div>
+                            <!-- Email config -->
+                            <input type="hidden" name="_template" value="box">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="text" name="_honey" style="display:none">
+                            <input type="hidden" name="_subject" value="New submission! from personal site">
+                            <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase">
+                            <!-- <input type="hidden" name="_autoresponse" value="Thank you for your contact"> -->
+
                             <!-- Submit success message-->
                             <!---->
                             <!-- This is what your users will see when the form-->
@@ -189,7 +190,7 @@
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                             <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
+                            <button class="btn btn-primary btn-xl w-100" id="submitButton" type="submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -248,7 +249,7 @@
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/simon.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
                                     <p class="mb-4">
-                                        Basic game website from html, css and javascript
+                                        My first basic game website with html, css and javascript. I start when I learn to be web-developer, and this game fun to play.
                                     </p>
                                        
                                         <button class="btn btn-secondary me-3" data-bs-dismiss="modal">
@@ -288,7 +289,9 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/TodaList.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                        Create a simple todo list web app using Node.js and MongoDB, deployed on Render and MongoDB Atlas. Users can manage multiple todo lists by changing the URL path, allowing for organized and versatile task management.
+                                    </p>
                                     <button class="btn btn-secondary me-3" data-bs-dismiss="modal">
                                         <a class="btn-link text-decoration-none" href="https://todolist-7b8x.onrender.com" target="_blank">
                                             <i class="fas fa-circle-up fa-fw"></i>
@@ -327,7 +330,9 @@
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/img/portfolio/WeatherForecast.png" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                    <p class="mb-4">
+                                        Develop a weather forecasting website using React with TypeScript, integrating a Weather API. Users can search for weather forecasts by city name and access current location data via GPS for a seamless and informative weather experience.
+                                    </p>
                                     <button class="btn btn-secondary me-3" data-bs-dismiss="modal">
                                         <a class="btn-link text-decoration-none" href="https://weatherforecast-hljl.onrender.com" target="_blank">
                                             <i class="fas fa-circle-up fa-fw"></i>

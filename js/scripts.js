@@ -55,23 +55,25 @@ window.addEventListener('DOMContentLoaded', event => {
 
     function sendEmail() {
 
-        // Define the email parameters
-        let messages = `from: ${$('#name').val()} \n tel:${$('#phone').val()} \n ${$('#message').val()}`;
-        const emailParams = {
-            from_name: $('#email').val(),
-            message: messages,
-        };
-        console.log(emailParams);
-    
-        // Send the email
-        emailjs.send('service_369n4ub', 'template_4norfeq', emailParams)
-        .then(function(response) {
-        handleSuccess(response);
-        }, function(error) {
-        handleFailure(error);
+        console.log("send email");
+        $.ajax({
+            url: "https://formsubmit.co/ajax/fceacebd21abdbb49a5d2ca9f266301c",
+            method: "POST",
+            data: {
+                name: $("#email").val(),
+                message: $("#message").val()
+            },
+            dataType: "json"
+        })
+        .then(response => {
+            handleSuccess(response);
+            console.log(response);
+        })
+        .catch(error => {
+            handleFailure(error);
+            console.log(error);
         });
-
-        $('#submitButton').prop('disabled', true);
+        $('#submitButton').prop('disabled', true).addClass('disabled').removeClass('btn-primary');
     }
 
     // Function to handle success
@@ -89,7 +91,6 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     function Submitform(e){
-        console.log("submit",e);
         sendEmail();
         e.preventDefault();
     }
