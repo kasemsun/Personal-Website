@@ -5,8 +5,7 @@
 */
 //
 // Scripts
-// 
-$('#user-form').on('submit', Submitform);
+
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
@@ -53,6 +52,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+
     function sendEmail() {
 
         console.log("send email");
@@ -93,7 +93,24 @@ window.addEventListener('DOMContentLoaded', event => {
         console.error('Email error:', error);
     }
 
-    function Submitform(e){
-        sendEmail();
-        e.preventDefault();
-    }
+    (function () {
+        'use strict'
+    
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+    
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }else{
+                    sendEmail()
+                }
+    
+                form.classList.add('was-validated')
+            }, false)
+            })
+    })()

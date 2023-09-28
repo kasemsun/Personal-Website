@@ -2,3 +2,12 @@
     border-radius: 50%;
     border: 0.25rem solid #FFFF;
 }
+
+.form-control {
+    outline: none;
+    box-shadow:none !important;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+    background-image: none;
+}
