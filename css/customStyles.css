@@ -11,3 +11,17 @@
 .was-validated .form-control:valid, .form-control.is-valid {
     background-image: none;
 }
+
+.logo{
+    width: 60px;
+    height: 60px;
+    object-fit: scale-down;
+}
+
+.laguage-box{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
