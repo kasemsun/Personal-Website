@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', event => {
             }
         });
     });
-
+    reveal();
 });
 
 
@@ -114,3 +114,20 @@ window.addEventListener('DOMContentLoaded', event => {
             }, false)
             })
     })()
+
+window.addEventListener("scroll", reveal);
+
+// To check the scroll position on page load
+
+function reveal() {
+    let reveals = document.querySelectorAll(".fade-in-element");
+    for(const element of reveals) {
+      let height = window.innerHeight;
+      let elementTop = element.getBoundingClientRect().top;
+      if (elementTop < height) {
+        element.classList.add("fade-in");
+      } else {
+        element.classList.remove("fade-in");
+      }
+    }
+  }
